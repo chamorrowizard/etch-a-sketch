@@ -16,9 +16,21 @@ function maxSquare(){
 
  for(let i=0; i<totalSquares;i++){
    const newBox = document.createElement("div");
+   newBox.setAttribute('class','squares');
    newBox.setAttribute('style', `border: 1px solid #ccc; height: 16px; width: 16px;`);
    containerDiv.append(newBox);
  }
     
 }
+
+
+function addHover(){
+    const allSquares = document.querySelectorAll('.squares');
+    allSquares.forEach(square => {
+      square.addEventListener('mouseover', () => {
+        square.style.backgroundColor = 'aqua';
+      })
+    });
+}
 maxSquare();
+addHover();
